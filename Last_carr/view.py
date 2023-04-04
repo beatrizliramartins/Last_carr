@@ -50,4 +50,21 @@ def ver_iten(id):
         rows = cur.fetchall()
         for row in rows:
             lista_itens.append(row)
+
     return lista_itens
+
+# Ver dados indiviual
+
+def ver_item():
+    print(id)
+    ver_dados_individual =[]
+    with con:
+        cur = con.cursor()
+        query = "SELECT * FROM inventarioo WHERE id=?"
+        cur.execute(query, id)
+
+        rows = cur.fetchall()
+        for row in rows:
+            ver_dados_individual.append(row)
+
+        return ver_dados_individual
